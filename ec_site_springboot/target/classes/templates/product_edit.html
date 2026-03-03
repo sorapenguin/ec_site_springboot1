@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>商品編集</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <div th:replace="header :: header"></div>
+
+    <h1>商品編集ページ</h1>
+
+    <form>
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>ID</th>
+                <td>
+                    <input type="text" value="1" disabled>
+                </td>
+            </tr>
+            <tr>
+                <th>商品名</th>
+                <td>
+                    <input type="text" value="サンプル商品">
+                </td>
+            </tr>
+            <tr>
+                <th>価格</th>
+                <td>
+                    <input type="number" value="1000">
+                </td>
+            </tr>
+            <tr>
+                <th>在庫数</th>
+                <td>
+                    <input type="number" value="10">
+                </td>
+            </tr>
+            <tr>
+                <th>公開フラグ</th>
+                <td>
+                    <select>
+                        <option>公開</option>
+                        <option>非公開</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+        <button type="button">更新（まだ未実装）</button>
+        <a th:href="@{/admin/products}">
+            <button type="button">戻る</button>
+        </a>
+    </form>
+
+    <!-- フッター -->
+    <div th:replace="footer :: footer"></div>
+
+</body>
+</html>

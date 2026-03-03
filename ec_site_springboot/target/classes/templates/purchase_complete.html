@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>購入完了</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="header :: header"></div>
+
+    <div class="purchase-complete-container">
+        <h1>購入完了</h1>
+        <p>ご購入ありがとうございました！</p>
+
+        <p>
+            <a th:href="@{/product_list}">商品一覧に戻る</a> |
+            <a th:href="@{/cart}">カートを見る</a>
+        </p>
+    </div>
+
+    <div th:replace="footer :: footer"></div>
+</body>
+</html>

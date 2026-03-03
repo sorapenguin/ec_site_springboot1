@@ -1,0 +1,31 @@
+<h1>商品一覧</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>商品名</th>
+            <th>説明</th>
+            <th>価格</th>
+            <th>在庫</th>
+            <th>公開</th>
+            <th>画像</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.description}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.stock}"></td>
+            <td th:text="${product.publicFlg}"></td>
+            <td>
+                <img th:if="${product.image != null}"
+                     th:src="@{'/images/' + ${product.image}}"
+                     width="80">
+            </td>
+        </tr>
+    </tbody>
+</table>

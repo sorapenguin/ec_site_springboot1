@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <header class="site-header" style="background-color: #8AB3DC; padding: 20px; text-align: center;">
+        <h1>ECサイト開発プロジェクト</h1>
+        <nav>
+            <a th:href="@{/login}">ホーム</a> |
+            <a th:href="@{/product_list}">商品一覧</a> |
+            <a th:href="@{/cart}">カート</a> |
+            <a th:href="@{/login}">ログイン</a>
+        </nav>
+    </header>
+</body>
+</html>

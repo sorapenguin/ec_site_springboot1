@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>商品管理</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:replace="header :: header"></div>
+
+    <h1>商品管理ページ</h1>
+
+    <!-- 商品一覧 -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>商品名</th>
+                <th>価格</th>
+                <th>在庫</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.price}"></td>
+                <td th:text="${product.stock}"></td>
+<td>
+    <a th:href="@{'/admin/products/edit/' + ${product.id}}">編集</a> |
+
+    <form th:action="@{'/admin/products/delete/' + ${product.id}}"
+          method="post"
+          style="display:inline;">
+        <button type="submit">削除</button>
+    </form>
+</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 新規商品追加フォーム -->
+<h2>新規商品追加</h2>
+<form th:action="@{/admin/products/add}" 
+      method="post" 
+      enctype="multipart/form-data">
+
+    <input type="text" name="name" placeholder="商品名" required>
+    <input type="number" name="price" placeholder="価格" required>
+    <input type="number" name="stockQty" placeholder="在庫数" required>
+    <input type="file" name="image" required>
+    <button type="submit">追加</button>
+
+</form>
+
+    <div th:replace="footer :: footer"></div>
+</body>
+</html>
